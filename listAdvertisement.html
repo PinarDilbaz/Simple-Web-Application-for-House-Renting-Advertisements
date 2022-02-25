@@ -1,0 +1,36 @@
+<DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="Css.css">
+  </head>
+  <body>
+    <div class="main">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="createAdvertisement.html">Create Advertisement</a></li>
+        <li class="active"><a href="listAdvertisement.html">List Advertisement</a></li>
+        <li><a href="houses.html">Houses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="logout.py">Logout</a></li>
+      </ul>
+    </div>
+    <div>
+      <script type="text/javascript">
+        function gettable(){
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+              document.getElementById(table).innerHTML = this.responseText;
+            }
+          };
+          xmlhttp.open("GET", "listAdvertisement.py", true);
+          xmlhttp.send();
+        }
+      </script>
+      <table id="tableId">
+      </table>
+    </div>
+  </body>
+</html>

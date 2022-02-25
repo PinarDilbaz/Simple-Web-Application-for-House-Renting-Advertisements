@@ -1,0 +1,45 @@
+<DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="Css.css">
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li class="active"><a href="houses.html">Houses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <form class="filter" method="post" action="filter.py" >
+        <label>Number of Bedrooms:  </label>
+        <input type="text" name="nobedroom" >
+        <label>Monthly Fee:  </label>
+        <input type="text" name="monthlyFee" placeholder="Minimum">
+        <label>Monthly Fee:  </label>
+        <input type="text" name="monthlyFee_2" placeholder="Maximum">
+        <label>City:  </label>
+        <input type="text" name="city">
+        <button type="filter" class="button-1">Find Houses</button>
+      </form>
+      <form class="form-2"></form>
+      <div class="recent">
+        <script>
+          var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                console.log("Here")
+                document.getElementById("table1").innerHTML=this.responseText
+              }
+          };
+          xmlhttp.open("GET", "getRecent.py", true);
+          xmlhttp.send();
+        </script>
+        <table id="table1" style="font-weight: bold">
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
